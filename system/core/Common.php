@@ -560,5 +560,20 @@ if ( ! function_exists('html_escape'))
 	}
 }
 
+// ------------------------------------------------------------------------
+/**
+* 测试视图是否存在，如果视图不存在，显示404页
+* 参数值例子： admin/index.html
+*
+* @access	public
+* @param	视图文件及其在views 文件夹中的位置
+* @return	mixed
+*/
+function test_view_exist($value='')
+{
+	if (! file_exists(APPPATH.'/views/'.$value)) {
+		show_404();
+	}
+}
 /* End of file Common.php */
 /* Location: ./system/core/Common.php */
